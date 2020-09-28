@@ -7,6 +7,24 @@
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="rainbow.png">
     <meta charset="UTF-8">
+    <meta name="title" content="HappyURL - Make your URL happy and wholesome">
+    <meta name="description" content="HappyURL - Make your URL happy and wholesome, better than any link shortener">
+    <meta name="keywords" content="link,shortener,happy,url,happyurl,shadyurl,shorten,bitly,rebrandly,web,internet">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://happyurl.gq/">
+    <meta property="og:title" content="HappyURL - Make your URL happy and wholesome">
+    <meta property="og:description" content="Make your URL happy and wholesome, better than any link shortener">
+    <meta property="og:image" content="rainbow.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://happyurl.gq/">
+    <meta property="twitter:title" content="HappyURL - Make your URL happy and wholesome">
+    <meta property="twitter:description" content="Make your URL happy and wholesome, better than any link shortener">
+    <meta property="twitter:image" content="rainbow.png">
     <!--no more metatags-->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
     <link rel="stylesheet" href="signup.css">
@@ -24,20 +42,20 @@
                 '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
             return !!pattern.test(str);
         }
-        function checkinput(data){
+        function checkinput(data) {
             if (data.keyCode == 13) {
                 makeurl()
             }
         }
-        function makeurl(){
-            if(validURL(document.getElementById("urlin").value)){
-                fetch("https://script.google.com/macros/s/AKfycbw-yBhJHNpIMORhXiBhZM79JOlSCwqDsa9nzQasOUyefqumM5k/exec?url="+encodeURIComponent(document.getElementById("urlin").value))
-                .then(a => a.json())
-                .then(response =>{
-                    document.getElementById("output").innerHTML = "<p id='subbed'>Your link is available at <a href='http://happinesslife.tk/"+response.data[0]+"' target='_blank'>happinesslife.tk/"+response.data[0]+"</a></p>";
-                });
+        function makeurl() {
+            if (validURL(document.getElementById("urlin").value)) {
+                fetch("https://script.google.com/macros/s/AKfycbw-yBhJHNpIMORhXiBhZM79JOlSCwqDsa9nzQasOUyefqumM5k/exec?url=" + encodeURIComponent(document.getElementById("urlin").value))
+                    .then(a => a.json())
+                    .then(response => {
+                        document.getElementById("output").innerHTML = "<p id='subbed'>Your link is available at <a href='http://happinesslife.tk/" + response.data[0] + "' target='_blank'>happinesslife.tk/" + response.data[0] + "</a></p>";
+                    });
             }
-            else{
+            else {
                 document.getElementById("output").innerHTML = "<p id='notsubbed'>Not a valid URL</p>";
             }
         }
@@ -48,10 +66,12 @@
     <h1 id="signup">HappyUrl</h1>
     <p style="width: 100%; text-align: center; font-family:sans-serif; font-size: 20px; margin-top: -50px;">Make your
         URL happy and wholesome</p>
-    <span class="spnn"></span> <input placeholder="enter your URL here..." onkeypress="checkinput(event)" id="urlin"><span class="spnn"></span>
-    <div class="openbutton" onclick="makeurl()"><span style="vertical-align: middle; display: inline-block; line-height: 50px;">Happy-ify!</span></div>
+    <span class="spnn"></span> <input placeholder="enter your URL here..." onkeypress="checkinput(event)"
+        id="urlin"><span class="spnn"></span>
+    <div class="openbutton" onclick="makeurl()"><span
+            style="vertical-align: middle; display: inline-block; line-height: 50px;">Happy-ify!</span></div>
     <div id="output"></div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7150949d870b5a"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7150949d870b5a"></script>
 
 </body>
 
