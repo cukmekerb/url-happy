@@ -1,0 +1,15 @@
+<!doctype html>
+<script>
+function move(){
+var w = location.pathname;
+w = w.replace("/","");
+fetch("https://script.google.com/macros/s/AKfycbzf4X8MqOFGRGcYb7TbuUUiERq6t24N7V20fPr6TRD5MNMu-VY/exec?q="+w)
+.then(a => a.json())
+.then(a =>{
+    window.location = a.url;
+})
+}
+</script>
+<body onload="move()">
+
+</body>
