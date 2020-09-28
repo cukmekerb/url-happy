@@ -1,3 +1,3 @@
 # url-happy
-[http://happyurl.gq/](http://happyurl.gq)
+[https://happyurl.gq/](https://happyurl.gq)
 Make your URL happy and wholesome
