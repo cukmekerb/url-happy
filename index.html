@@ -46,6 +46,7 @@
         }
         function makeurl() {
             if (validURL(document.getElementById("urlin").value)) {
+                document.getElementById("output").innerHTML = "<p id='subbed'>Working...</p>";
                 fetch("https://script.google.com/macros/s/AKfycbw-yBhJHNpIMORhXiBhZM79JOlSCwqDsa9nzQasOUyefqumM5k/exec?url=" + encodeURIComponent(document.getElementById("urlin").value))
                     .then(a => a.json())
                     .then(response => {
