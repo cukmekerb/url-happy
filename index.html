@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="signup.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height" />
+    <script src="//cdn.rawgit.com/erosson/swarm-numberformat/v0.1.0/dist/swarm-numberformat.min.js" rel="preload" defer></script>
     <script>
         function validURL(str) {
             var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
@@ -57,10 +58,17 @@
                 document.getElementById("output").innerHTML = "<p id='notsubbed'>Not a valid URL</p>";
             }
         }
+        function init() {
+            fetch("https://script.google.com/macros/s/AKfycbw1J_6ASrTYStP_boCI1VmTYdf7rNFODwism9BaBCaotyNqjaM/exec")
+                .then(a => a.json())
+                .then(a => {
+                    document.getElementById("over500").innerHTML = "Over " + numberformat.format(a.length - 1) + " links shortened!";
+                })
+        }
     </script>
 </head>
 
-<body>
+<body onload="init()">
     <h1 id="signup">HappyUrl</h1>
     <p style="width: 100%; text-align: center; font-family:sans-serif; font-size: 20px; margin-top: -50px;">Make your
         URL happy and wholesome</p>
@@ -69,6 +77,8 @@
     <div class="openbutton" onclick="makeurl()"><span
             style="vertical-align: middle; display: inline-block; line-height: 50px;">Happy-ify!</span></div>
     <div id="output"></div>
+    <br><br>
+    <h2 id="over500"></h2>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f7150949d870b5a"></script>
 
 </body>

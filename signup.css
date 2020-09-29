@@ -18,6 +18,11 @@ html {
     margin-right: auto;
     text-align: center;
 }
+h2{
+    text-align: center;
+    width: 100%;
+    font-family: sans-serif;
+}
 @media (min-width: 950px) {
     #signup {
         text-align: center;
