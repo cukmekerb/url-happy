@@ -62,7 +62,7 @@
             fetch("https://script.google.com/macros/s/AKfycbw1J_6ASrTYStP_boCI1VmTYdf7rNFODwism9BaBCaotyNqjaM/exec")
                 .then(a => a.json())
                 .then(a => {
-                    document.getElementById("over500").innerHTML = "Over " + numberformat.format(a.length - 1) + " links shortened!";
+                    document.getElementById("over500").innerHTML = "Over " + numberformat.format(a.length - 1) + " links happy-ified!";
                 })
         }
     </script>
